@@ -1,0 +1,1 @@
+This is a go project with containerized mysql service.
