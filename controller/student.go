@@ -4,6 +4,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"go-with-echo-gorm/model"
 	"go-with-echo-gorm/storage"
+	"log"
 	"net/http"
 )
 
@@ -14,6 +15,7 @@ func GetStudents(c echo.Context) error {
 
 func GetRepoStudents() ([]model.Student, error) {
 	db := storage.GetDBInstance()
+	log.Print(db)
 	students := []model.Student{}
 
 	if err := db.Find(&students).Error; err != nil {
