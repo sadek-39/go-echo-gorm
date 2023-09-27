@@ -15,5 +15,7 @@ func main() {
 		return c.String(http.StatusOK, "Hello, World!")
 	})
 	e.GET("/students", controller.GetStudents)
+	e.GET("/class", controller.GetClass)
+
 	e.Logger.Fatal(e.Start(":1323"))
 }
